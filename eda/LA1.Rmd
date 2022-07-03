@@ -1,0 +1,304 @@
+---
+title: "LA1"
+output:
+  html_document: default
+  pdf_document: default
+date: '2022-06-25'
+---
+1.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+2.
+```{r}
+dataset<-read.csv("test_scores.csv")
+max(dataset$school_setting)
+
+```
+
+3.Max of 
+
+```{r}
+max(dataset$school_setting)
+```
+4.
+```{r}
+search()
+```
+5.search() function in R Language is used to get the list of all the attached packages in the R search path. 
+```{r}
+head(dataset)
+```
+6.give all the top head
+```{r}
+tail(dataset)
+```
+7.all the details from tail
+```{r}
+head(dataset,10)
+```
+8.top ten data
+```{r}
+tail(dataset,10)
+```
+9.least 10 dataset
+```{r}
+str(dataset)
+```
+10.str() function in R Language is used for compactly displaying the internal structure of a R object. 
+```{r}
+names(dataset)
+```
+11.names() function in R Language is used to get or set the name of an Object.
+```{r}
+ls()
+```
+12.The ls() function in R is used to return a vector of character strings containing all the variables and functions that are defined in the current working directory in R programming. 
+```{r}
+x<-data.frame(dataset$school_setting)
+```
+```{r}
+x
+```
+13.DISPLAYLING ONLY MENTIONED COLUMNS.
+```{r}
+max(dataset$school_setting)
+```
+14.maximum number of repetation of particular element.
+```{r}
+min(dataset$school_setting)
+```
+15.minimum number of repetation of particular element.
+```{r}
+median(dataset$school_type)
+```
+16.medain.
+```{r}
+mean(dataset$n_student)
+```
+17.mean
+```{r}
+mode(dataset$school_type)
+```
+18.mode finding.. maximum repeating.
+```{r}
+sort(dataset$n_student)
+```
+19.sorting in inceasing order.
+```{r}
+sort(dataset[1,])
+```
+20.sorting row 1.
+```{r}
+order(dataset$n_student)
+```
+21.ordering number of student column.
+```{r}
+rank(dataset$classroom)
+```
+22.ranking the classroom
+```{r}
+dimnames(dataset)
+```
+23.looks at column and row at the same time
+```{r}
+dimnames(dataset)
+```
+24.looks at column and row at the same time
+```{r}
+length(dataset$classroom)
+```
+25.length of classrom cloumn
+```{r}
+xyz=with(dataset,order(dataset$school_type,dataset$school_setting))
+```
+26....
+```{r}
+dataset.mat=as.matrix(dataset)
+```
+27.cpnverting the dataset into matrix
+```{r}
+dataset.mat
+```
+28.
+```{r}
+frame.list=as.list(dataset)
+```
+29.convert into list
+```{r}
+frame.list
+```
+30.standard deviation
+```{r}
+sd(dataset$n_student)
+```
+31.standard deviation without NA
+```{r}
+sd(dataset$n_student,na.rm = TRUE)
+```
+32.na-omit is used to strip out NA items
+```{r}
+length(na.omit(dataset$school_setting))
+```
+33.gives log
+```{r}
+log(dataset$n_student)
+```
+34.t()-rotates dataframe 
+```{r}
+t(dataset)
+```
+38. margin.table() command to get overall total
+```{r}
+margin.table(dataset$n_student)
+```
+39. display table data as proportion of total
+```{r}
+prop.table(dataset$n_student)
+```
+40.
+```{r}
+dataset[3,3]
+```
+42
+```{r}
+plot(dataset$student_id,dataset$n_student,xlab = "",ylab = "")
+```
+43.
+```{r}
+with(dataset,plot(student_id,n_student))
+```
+44.
+```{r}
+plot(dataset$posttest,dataset$n_student)
+```
+45.
+```{r}
+boxplot(dataset$pretest)
+```
+46.
+```{r}
+with(dataset,table(posttest,n_student))
+```
+47.
+```{r}
+summary(dataset)
+```
+48.
+```{r}
+rnorm(20,mean = 5,sd = 1)
+```
+49.
+```{r}
+addmargins(dataset,1,mean)
+```
+50.
+```{r}
+shapiro.test(dataset$n_student)
+```
+51.
+```{r}
+t(dataset)
+```
+52.
+```{r}
+row.names(dataset)
+```
+53.
+```{r}
+as.table(as.matrix(dataset))
+```
+54.
+```{r}
+class(dataset)
+```
+56.
+```{r}
+dataset.mat
+```
+57
+```{r}
+mean(dataset)
+```
+58.
+```{r}
+rank(dataset)
+```
+59.
+```{r}
+dataset[3,1:3]
+```
+60.stem()create stem and leaf plot
+```{r}
+stem(dataset$pretest)
+```
+61.
+```{r}
+matrix(x,ncol=5)
+```
+62.
+```{r}
+sample(dataset,size=5,replace = TRUE)
+```
+63.
+```{r}
+cov(dataset$n_student,dataset$posttest)
+```
+64.
+```{r}
+cor(dataset$n_student,dataset$posttest)
+```
+65.nothing is ploted only graph is produced
+```{r}
+plot(dataset$n_student,type = 'n')
+```
+66. pie
+```{r}
+dotchart(dataset$n_student)
+```
+67.
+```{r}
+barplot(dataset$posttest)
+```
+68. naming x and y axis
+```{r}
+barplot(dataset$n_student,xlab = 'a',ylab = 'b')
+```
+69. plot column of data.
+```{r}
+plot(dataset$n_student)
+
+```
+70. levels
+```{r}
+levels(dataset)
+```
+71. sacks arranges the value and pair index.
+```{r}
+mysatck=stack(dataset)
+```
+72.
+```{r}
+na.omit(stack(dataset))
+```
+73.
+```{r}
+matrix(x,ncol=5)
+```
+74.
+```{r}
+mysatck
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

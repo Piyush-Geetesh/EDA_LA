@@ -1,0 +1,145 @@
+---
+title: "LA_2"
+output:
+  html_document: default
+  pdf_document: default
+date: '2022-07-03'
+---
+1. First viewing the given dataset.
+```{r}
+dataset<-read.csv("test_scores.csv")
+dataset
+```
+2. Scatter plot.
+```{r}
+library(ggplot2)
+ggplot(dataset, aes(x = school_type, y = n_student)) +
+geom_point()
+```
+3.creating a line graph.
+```{r}
+ggplot(dataset, aes(x = school_type, y = n_student)) +
+geom_line()
+```
+3.Creating a Bar Graph
+```{r}
+ggplot(dataset, aes(x = dataset$school_type, y = dataset$n_student)) +
+geom_col()
+```
+creating a histogram
+```{r}
+ggplot(dataset, aes(y = n_student)) +
+geom_histogram(binwidth = 4)
+```
+```{r}
+ggplot(dataset, aes(x = dataset$school_type, y = dataset$n_student)) +
+geom_boxplot()
+```
+4.grouping graph together
+```{r}
+ggplot(dataset, aes(x = dataset$school_type, y = dataset$n_student, fill = school_setting)) +
+geom_col(position = "dodge")
+```
+making bargraph of counts
+```{r}
+ggplot(dataset, aes(x = dataset$n_student)) +
+geom_bar()
+```
+```{r}
+ggplot(dataset, aes(x = dataset$school_type, y = dataset$n_student)) +
+geom_col(width = 0.5)
+```
+```{r}
+ggplot(dataset, aes(x = dataset$school_setting, y = dataset$n_student)) +
+geom_col()
+```
+Cleveland Dot plot
+```{r}
+ggplot(dataset, aes(y = dataset$school_type, x = dataset$n_student)) +
+geom_point()
+```
+Line graph
+```{r}
+ggplot(dataset, aes(y = dataset$school_setting, x = dataset$n_student)) +
+geom_line()
+```
+Line graph with points
+```{r}
+ggplot(dataset, aes(y = dataset$n_student, x = dataset$n_student)) +
+geom_line() +
+geom_point()
+```
+Line graph with colour
+```{r}
+ggplot(dataset, aes(y = dataset$n_student, x = dataset$school_type)) +
+geom_line(linetype =
+"dashed"
+, size =
+1
+, colour =
+"blue"
+)
+```
+graph with shaded area
+```{r}
+ggplot(dataset, aes(y = dataset$school_type, x = dataset$n_student)) +
+geom_area()
+```
+Making histogram
+```{r}
+ggplot(dataset, aes(x = dataset$n_student)) +
+geom_histogram()
+```
+Making histogram with facet
+```{r}
+ggplot(dataset, aes(x = dataset$n_student)) +
+geom_histogram() +
+facet_grid(school_setting ~ .)
+```
+Making density curve
+```{r}
+ggplot(dataset, aes(x = dataset$n_student)) +
+geom_density()
+```
+Making frequency plygon
+```{r}
+ggplot(dataset, aes(x = dataset$n_student)) +
+geom_freqpoly()
+```
+creating a violin plot
+```{r}
+ggplot(dataset, aes(x = dataset$school_type, y = dataset$n_student)) +
+geom_violin()
+```
+creating a violin plot with box plot
+```{r}
+ggplot(dataset, aes(x = dataset$school_type, y = dataset$n_student)) +
+geom_violin() + geom_boxplot(width =
+.1
+, fill =
+"black"
+, outlier.colour =
+NA
+)
+```
+creating a violin plot with smoothing
+```{r}
+ggplot(dataset, aes(x = dataset$school_type, y = dataset$n_student)) +
+geom_violin(adjust=2
+)
+```
+Making a dotplot
+```{r}
+ggplot(dataset, aes(x = dataset$n_student)) +
+geom_dotplot()
+```
+Making a dotplot with boxplot
+```{r}
+ggplot(dataset, aes(x = dataset$n_student)) +
+geom_boxplot(outlier.colour =
+NA
+, width =
+.4
+) +
+geom_dotplot()
+```
